@@ -10,3 +10,12 @@ This project is a React Dashboard application with TypeScript, Tailwind CSS, and
    ```bash
    git clone https://github.com/<your-github-username>/react-dashboard.git
    cd react-dashboard
+
+Library tambahan
+ - react router dom
+ - react-chartjs-2
+ - react icons
+
+ yang belum 
+
+ - setup Docker

@@ -72,7 +72,7 @@ export const CategoriesCard = () => {
   return (
     <div className="bg-white rounded-xl shadow p-6 lg:w-full sm:w-fit md:w-full">
       <div className="grid grid-cols-1 mb-4">
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 items-center border-b border-teal-500 py-2 col-span-2">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 items-center border-b border-blue-500 py-2 col-span-2">
           <input
             onChange={(e) => setSearch(e.target.value)}
             className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -82,7 +82,7 @@ export const CategoriesCard = () => {
           />
           <button
             onClick={() => setClickSearch(search)}
-            className="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded"
+            className="flex-shrink-0 border-transparent border-4 text-blue-500 hover:text-blue-800 text-sm py-1 px-2 rounded"
             type="button"
           >
             Search
@@ -110,7 +110,7 @@ export const CategoriesCard = () => {
             <div className="text-center">
               <p className="text-sm font-semibold text-gray-800">{item.price}</p>
               <div
-                className={`text-xs text-white px-2 py-0.5 rounded bg-green-400`}
+                className={`text-xs text-white px-2 py-0.5 rounded bg-blue-600`}
               >
                 {item.rating}
               </div>

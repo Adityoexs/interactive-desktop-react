@@ -1,0 +1,16 @@
+services:
+  dashboard:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    environment:
+      - VITE_API_URL=http://api.example.com
+    networks:
+      - dashboard_network
+
+networks:
+  dashboard_network:
+    driver: bridge

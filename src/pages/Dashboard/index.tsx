@@ -5,8 +5,8 @@ import { DashboardRecipes } from "../Recipes";
 
 function Dashboard() {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      {/* <h1 className="text-3xl font-semibold mb-10 text-gray-800">Dashboard</h1> */}
+    <div className="min-h-screen bg-gray-100 p-4">
+      
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Chart Section */}

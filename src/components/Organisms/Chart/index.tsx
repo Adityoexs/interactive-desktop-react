@@ -81,7 +81,7 @@ export const ChartTagsComponent = () => {
   };
 
   return (
-    <div className="p-6 bg-white rounded-xl shadow-md max-w-lg mx-auto">
+    <div className="p-1 bg-white rounded-xl shadow-md max-w-lg mx-auto">
       <h2 className="text-xl font-semibold mb-4 text-center">Tag Distribution in Recipes</h2>
       <Pie data={pieTagsData} options={{ responsive: true }} />
     </div>

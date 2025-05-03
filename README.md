@@ -8,8 +8,17 @@ This project is a React Dashboard application with TypeScript, Tailwind CSS, and
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/<your-github-username>/react-dashboard.git
+   git clone https://github.com/Adityoexs/interactive-desktop-react
    cd react-dashboard
+   npm install
+   npm run dev
+
+2. Docker Compose:
+   ```bash
+   git clone https://github.com/Adityoexs/interactive-desktop-react
+   cd react-dashboard
+   npm install
+   docker-compose up --build 
 
 Library tambahan
  - react router dom
@@ -18,4 +27,4 @@ Library tambahan
 
  yang belum 
 
- - setup Docker
+ - setup Docker Compose Routing

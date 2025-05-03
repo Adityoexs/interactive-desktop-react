@@ -1,25 +1,29 @@
-# Build stage
-FROM node:20 as build
+# Use an official node runtime as the base image
+FROM node:20.12.2 AS build
 
+# Set the working directory in the container
 WORKDIR /app
 
-# Install dependencies
+# Copy package.json and package-lock.json (if exists)
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-# Copy source files
+# Copy the rest of the application
 COPY . .
 
-# Build the app (production)
+# Build the project
 RUN npm run build
 
-# Production stage (Nginx for serving the build)
+# Use a smaller image to serve the app
 FROM nginx:alpine
 
-# Copy the build folder from the build stage to Nginx's html folder
+# Copy the build folder to the Nginx HTML directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
+# Expose the port that the app will be served on
 EXPOSE 80
 
+# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]

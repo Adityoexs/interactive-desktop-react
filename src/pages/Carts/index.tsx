@@ -64,7 +64,7 @@ export const ChartCartDiscountedComponent = () => {
                     const currentData = get.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
+    <div className="p-2 max-w-lg mx-auto">
       <div className="grid grid-cols-1 mt-4 place-items-center">
         <Pagination
           currentPage={currentPage}

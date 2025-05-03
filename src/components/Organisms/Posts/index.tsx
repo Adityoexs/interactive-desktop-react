@@ -20,7 +20,7 @@ const PostsList: React.FC = () => {
             fetchFunct(); // Fetch data when component mounts
           }, []);
 
-          const itemsPerPage = 3;
+          const itemsPerPage = 2;
           const [currentPage, setCurrentPage] = useState(1);
         
           // Recalculate totalPages and currentData dynamically
@@ -34,7 +34,7 @@ const PostsList: React.FC = () => {
           const currentData = get.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div className="grid lg:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6 p-4">
+    <div className="grid lg:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6 p-4 mt-2">
       {currentData.map(post => (
         <PostsComponents
           key={post.id}

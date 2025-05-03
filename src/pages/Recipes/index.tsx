@@ -10,14 +10,6 @@ const fetchData = async (url: string) => {
   return data?.recipes || [];
 };
 
-// Helper function to count occurrences of items (tags, meal types)
-const countItems = (items: string[]) => {
-  return items.reduce((acc: Record<string, number>, item) => {
-    acc[item] = (acc[item] || 0) + 1;
-    return acc;
-  }, {});
-};
-
 export const Recipes = () => {
   const [recipes, setRecipes] = useState<any[]>([]);
 
@@ -31,11 +23,6 @@ export const Recipes = () => {
   }, []);
 
   const total = recipes.length;
-  const allTags = Array.from(new Set(recipes.flatMap((r: any) => r.tags)));
-  const allMeals = Array.from(new Set(recipes.map((r: any) => r.meal)));
-
-  const tagStats = countItems(allTags);
-  const mealStats = countItems(allMeals);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -77,11 +64,6 @@ export const DashboardRecipes = () => {
   }, []);
 
   const total = recipes.length;
-  const allTags = Array.from(new Set(recipes.flatMap((r: any) => r.tags)));
-  const allMeals = Array.from(new Set(recipes.map((r: any) => r.meal)));
-
-  const tagStats = countItems(allTags);
-  const mealStats = countItems(allMeals);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">

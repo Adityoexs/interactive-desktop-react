@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
 
-type Category = {
-  name: string;
-  sales: number;
-  gross: string;
-  change: string;
-  changeColor: string;
-  dotColor: string;
-};
-
 export const CategoriesCard = () => {
   const [sortBy, setSortBy] = useState("");
   const [get, setGet] = useState<any[]>([]); // Data from fetch

@@ -1,17 +1,4 @@
-
-import { FaUsers, FaChartLine, FaDollarSign, FaThumbsUp } from "react-icons/fa";
-import { AnalyticsCard } from "../../components/Organisms/AnalyticsCard";
 import { CategoriesCard } from "../../components/Organisms/CategoriesCard";
-import { useEffect, useState } from "react";
-
-type Category = {
-    name: string;
-    sales: number;
-    gross: string;
-    change: string;
-    changeColor: string;
-    dotColor: string;
-  };
 
 
 function Products() {
@@ -23,7 +10,6 @@ function Products() {
         <CategoriesCard/>
         </div>
         </div>
-      {/* </div> */}
     </div>
   );
 }

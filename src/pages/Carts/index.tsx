@@ -1,4 +1,3 @@
-import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import Cart from '../../components/Organisms/Cart';
 import { useEffect, useState } from 'react';
@@ -73,8 +72,6 @@ export const ChartCartDiscountedComponent = () => {
           onPageChange={handlePageChange}
         />
         <Cart carts={currentData} />
-        {/* <h2 className="grid place-items-center">Discount Percentage Per Cart</h2> */}
-        {/* <Pie data={pieData} options={{ responsive: true }} /> */}
       </div>
     </div>
 

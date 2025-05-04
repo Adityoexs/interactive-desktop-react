@@ -1,24 +1,32 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link, useLocation } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Dashboard', href: '/', current: window.location.pathname==="/"?true:false },
-  { name: 'Products', href: '/Products', current: window.location.pathname==="/Products"?true:false },
-  { name: 'Recipes', href: '/Recipes', current: window.location.pathname==="/Recipes"?true:false },
-  { name: 'Carts', href: '/Carts', current: window.location.pathname==="/Carts"?true:false },
-]
+  { name: 'Dashboard', href: '/', current: false },
+  { name: 'Products', href: '/products', current: false },
+  { name: 'Recipes', href: '/recipes', current: false },
+  { name: 'Carts', href: '/carts', current: false },
+];
 
-function classNames(...classes:any[]) {
-  return classes.filter(Boolean).join(' ')
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
+  const location = useLocation();
+
+  // Update 'current' value based on the current location/pathname
+  navigation.forEach((item) => {
+    item.current = location.pathname === item.href;
+  });
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
+            {/* Mobile menu button */}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
@@ -37,17 +45,17 @@ export default function Navbar() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium',
+                      'rounded-md px-3 py-2 text-sm font-medium'
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -61,7 +69,6 @@ export default function Navbar() {
               <span className="sr-only">View notifications</span>
               <BellIcon aria-hidden="true" className="size-6" />
             </button>
-
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
@@ -108,25 +115,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
-          ))}
-        </div>
-      </DisclosurePanel>
     </Disclosure>
-  )
+  );
 }

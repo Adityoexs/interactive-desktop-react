@@ -26,5 +26,3 @@ Library tambahan
  - react icons
 
  yang belum 
-
- - setup Docker Compose Routing

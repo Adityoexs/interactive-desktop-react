@@ -3,10 +3,9 @@ import DefaultNavbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import { ChartCartDiscountedComponent } from './pages/Carts';
 import { Recipes } from './pages/Recipes';
-import Products from './pages/Products\'';
+import Products from './pages/Products';
 
 function App() {
-
   return (
     <Router> {/* Wrap the app with Router */}
       <DefaultNavbar />
